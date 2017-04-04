@@ -68,11 +68,11 @@ Vector2 Vector2::operator/(const Vector2& rhs)
 float Vector2::magnitude()
 {
 	float result;
-	result = sqrt((x * x) + (y * y));
+	result = sqrtf(x * x + y * y);
 	return result;
 }
 
-float Vector2::dot(const Vector2 rhs)
+float Vector2::dot(const Vector2& rhs)
 {
 	float result;
 	result = x * rhs.x + y * rhs.y;
@@ -84,9 +84,10 @@ float Vector2::normalize()
 	float mag = magnitude();
 	x = x / mag;
 	y = y / mag;
+	return mag;
 }
 
-Vector2 operator/(const float & lhs, const Vector2 rhs)
+Vector2 operator/(const float & lhs, const Vector2& rhs)
 {
 	Vector2 result;
 	result.x = lhs / rhs.x;

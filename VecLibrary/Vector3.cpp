@@ -55,7 +55,7 @@ Vector3 operator*(const float lhs, const Vector3& rhs)
 	return result;
 }
 
-Vector3 operator/(const float lhs, const Vector3 & rhs)
+Vector3 operator/(const float lhs, const Vector3& rhs)
 {
 	Vector3 result;
 	result.x = lhs / rhs.x;
@@ -85,7 +85,7 @@ Vector3 Vector3::operator/(const Vector3& rhs)
 float Vector3::magnitude()
 {
 	float result;
-	result = sqrt((x * x) + (y * y) + (z * z));
+	result = sqrtf((x * x) + (y * y) + (z * z));
 	return result;
 }
 
@@ -102,6 +102,16 @@ float Vector3::normalize()
 	x = x / mag;
 	y = y / mag;
 	z = z / mag;
+	return mag;
+}
+
+Vector3 Vector3::cross(const Vector3& rhs)
+{
+	Vector3 result;
+	result.x = y * rhs.z - z * rhs.y;
+	result.y = z * rhs.x - x * rhs.z;
+	result.z = x * rhs.y - y * rhs.x;
+	return result;
 }
 
 Vector3 operator/(const float & lhs, const Vector3 rhs)
