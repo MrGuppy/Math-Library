@@ -68,7 +68,7 @@ Matrix4 Matrix4::operator*(const Matrix4 & rhs)
 	result.m[12] = m[0] * rhs.m[12] + m[4] * rhs.m[13] + m[8] * rhs.m[14] + m[12] * rhs.m[15];
 	result.m[13] = m[1] * rhs.m[12] + m[5] * rhs.m[13] + m[9] * rhs.m[14] + m[13] * rhs.m[15];
 	result.m[14] = m[2] * rhs.m[12] + m[6] * rhs.m[13] + m[10] * rhs.m[14] + m[14] * rhs.m[15];
-	result.m[15] = m[3] * rhs.m[12] + m[7] * rhs.m[13] + m[11] * rhs.m[14] + m[15xc] * rhs.m[15];
+	result.m[15] = m[3] * rhs.m[12] + m[7] * rhs.m[13] + m[11] * rhs.m[14] + m[15] * rhs.m[15];
 
 	return result;
 }
@@ -81,4 +81,9 @@ Vector4 Matrix4::operator*(const Vector4& rhs)
 	result.z = m[8] * rhs.x + m[9] * rhs.y + m[10] * rhs.z + m[11] + rhs.w;
 	result.w = 0;
 	return result;
+}
+
+Vector4 Matrix4::operator[](const int rhs)
+{
+	return *(Vector4*) (m + 4 * rhs);
 }

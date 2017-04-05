@@ -15,7 +15,6 @@ Matrix2::Matrix2()
 {
 	m[0] = 1; 
 	m[1] = 0;
-
 	m[2] = 0;
 	m[3] = 1;
 }
@@ -40,5 +39,10 @@ Vector2 Matrix2::operator*(const Vector2& rhs)
 	result.x = m[0] * rhs.x + m[1] * rhs.y;
 	result.y = m[2] * rhs.x + m[3] * rhs.y;
 	return result;
+}
+
+Vector2 Matrix2::operator[](const int rhs)
+{
+	return *(Vector2*)(m + 2 * rhs)
 }
 

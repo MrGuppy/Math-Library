@@ -58,3 +58,9 @@ Vector3 Matrix3::operator*(const Vector3 & rhs)
 	result.z = m[6] * rhs.x + m[7] * rhs.y + m[8] * rhs.z;
 	return result;
 }
+
+Vector3 Matrix3::operator[](const int rhs)
+{
+	return *(Vector3*)(m + 3 * rhs);
+
+}

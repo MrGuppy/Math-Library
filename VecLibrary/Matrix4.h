@@ -13,6 +13,7 @@ public:
 
 	float m[16];
 
+	Vector4 operator[](const int rhs);
 	Matrix4 operator*(const Matrix4& rhs);
 	Vector4 operator*(const Vector4& rhs);
 

@@ -10,6 +10,7 @@ public:
 
 	Matrix3 operator*(const Matrix3& rhs);
 	Vector3 operator*(const Vector3& rhs);
+	Vector3 operator[](const int rhs);
 
 	//set rotate 
 	//subscript operator
