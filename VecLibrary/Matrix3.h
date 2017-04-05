@@ -17,6 +17,6 @@ public:
 	//float fp v cast operator
 	//float fp m cast operator
 
-	float m[4];
+	float m[9];
 };
 

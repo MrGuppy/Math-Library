@@ -15,6 +15,17 @@ Matrix3::Matrix3(float a, float b, float c, float d, float e, float f, float g, 
 
 Matrix3::Matrix3()
 {
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+
+	m[3] = 0;
+	m[4] = 1;
+	m[5] = 0;
+
+	m[6] = 0;
+	m[7] = 0;
+	m[8] = 1;
 }
 
 Matrix3::~Matrix3()
@@ -41,5 +52,9 @@ Matrix3 Matrix3::operator*(const Matrix3 & rhs)
 
 Vector3 Matrix3::operator*(const Vector3 & rhs)
 {
-	return Vector3();
+	Vector3 result;
+	result.x = m[0] * rhs.x + m[1] * rhs.y + m[2] * rhs.z;
+	result.y = m[3] * rhs.x + m[4] * rhs.y + m[5] * rhs.z;
+	result.z = m[6] * rhs.x + m[7] * rhs.y + m[8] * rhs.z;
+	return result;
 }

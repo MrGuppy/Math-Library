@@ -7,8 +7,8 @@ public:
 	Matrix2();
 	~Matrix2();
 
-	Matrix2 operator*(const Matrix2& rhs);
-	Vector2 operator*(const Vector2& rhs);
+	Matrix2 operator*(const Matrix2& rhs); //M * M
+	Vector2 operator*(const Vector2& rhs); //V * M
 
 	//set rotate 
 	//subscript operator
@@ -16,5 +16,5 @@ public:
 	//float fp v cast operator
 	//float fp m cast operator
 
-	float m[9];
+	float m[4];
 };

@@ -1,3 +1,7 @@
-﻿  Vector2.cpp
-c:\users\s171736\documents\github\math-library\veclibrary\vector2.cpp(71): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  Vector4.cpp
+  Vector3.cpp
+  Matrix4.cpp
+  Matrix3.cpp
+  Generating Code...
+Main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
   VecLibrary.vcxproj -> C:\Users\s171736\Documents\GitHub\Math-Library\x64\Debug\VecLibrary.exe
