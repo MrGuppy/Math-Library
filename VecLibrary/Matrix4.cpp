@@ -44,7 +44,30 @@ Matrix4::Matrix4()
 	m[15] = 1;
 }
 
-Matrix4 Matrix4::setRotate(const float a)
+Matrix4 Matrix4::setRotateX(const float a)
+{
+	m[0] = 1; //col 1
+	m[1] = 0;
+	m[2] = 0;
+	m[3] = 0;
+
+	m[4] = 0; //col 2
+	m[5] = 1;
+	m[6] = cos(a);
+	m[7] = sin(a);
+
+	m[8] = 0; //col 3
+	m[9] = 0;
+	m[10] = -sin(a);
+	m[11] = cos(a);
+
+	m[12] = 0; //col 4
+	m[13] = 0;
+	m[14] = 0;
+	m[15] = 1;
+}
+
+Matrix4 Matrix4::setRotateZ(const float a)
 {
 	m[0] = cos(a); //col 1
 	m[1] = sin(a);
@@ -65,6 +88,39 @@ Matrix4 Matrix4::setRotate(const float a)
 	m[13] = 0;
 	m[14] = 0;
 	m[15] = 1;
+}
+
+Matrix4 Matrix4::setRotateY(const float a)
+{
+	m[0] = cos(a); //col 1
+	m[1] = 0;
+	m[2] = sin(a);
+	m[3] = 0;
+
+	m[4] = 0; //col 2
+	m[5] = 1;
+	m[6] = 0;
+	m[7] = 0;
+
+	m[8] = -sin(a); //col 3
+	m[9] = 0;
+	m[10] = cos(a);
+	m[11] = 0;
+
+	m[12] = 0; //col 4
+	m[13] = 0;
+	m[14] = 0;
+	m[15] = 1;
+}
+
+Matrix4 Matrix4::setRotateW()
+{
+	m[15] = 1;
+}
+
+Matrix4::operator float*()
+{
+	return &m[0];
 }
 
 Matrix4::~Matrix4()
@@ -107,7 +163,7 @@ Vector4 Matrix4::operator*(const Vector4& rhs)
 	return result;
 }
 
-Vector4 Matrix4::operator[](const int rhs)
+Vector4& Matrix4::operator[](const int rhs)
 {
 	return *(Vector4*) (m + 4 * rhs);
 }

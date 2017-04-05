@@ -22,6 +22,8 @@ public:
 	float normalize();
 	float magnitude();
 
+	operator float*();
+
 
 };
 

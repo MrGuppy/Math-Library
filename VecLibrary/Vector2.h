@@ -11,9 +11,12 @@ public:
 	Vector2 operator-(const Vector2& rhs);
 	Vector2 operator/(const Vector2& rhs);
 	Vector2 operator+=(const Vector2& rhs);
+
 	float dot(const Vector2& rhs);
 	float normalize();
 	float magnitude();
+
+	operator float*();
 
 	float x;
 	float y;

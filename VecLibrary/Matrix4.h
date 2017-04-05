@@ -11,16 +11,20 @@ public:
 	Matrix4();
 	~Matrix4();
 
-	float m[16];
-
-	Vector4 operator[](const int rhs);
 	Matrix4 operator*(const Matrix4& rhs);
 	Vector4 operator*(const Vector4& rhs);
-	Matrix4 setRotate(const float a);
-	//set rotate 
 
-	//subscript operater returning reference
+	Vector4& operator[](const int rhs);
+
+	Matrix4 setRotateX(const float a);
+	Matrix4 setRotateY(const float a);
+	Matrix4 setRotateZ(const float a);
+	Matrix4 setRotateW();
+
+	operator float*();
+
 	//float fp v cast operator
 	//float fp m cast operator
 
+	float m[16];
 };

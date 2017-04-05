@@ -31,6 +31,11 @@ Matrix2 Matrix2::setRotate(const float a)
 	m[3] = cos(a);
 }
 
+Matrix2::operator float*()
+{
+	return &m[0];
+}
+
 Matrix2 Matrix2::operator*(const Matrix2& rhs)
 {
 	Matrix2 result;
@@ -49,7 +54,7 @@ Vector2 Matrix2::operator*(const Vector2& rhs)
 	return result;
 }
 
-Vector2 Matrix2::operator[](const int rhs)
+Vector2& Matrix2::operator[](const int rhs)
 {
 	return *(Vector2*)(m + 2 * rhs);
 }

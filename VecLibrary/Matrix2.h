@@ -9,13 +9,13 @@ public:
 
 	Matrix2 operator*(const Matrix2& rhs); //M * M
 	Vector2 operator*(const Vector2& rhs); //V * M
-	Vector2 operator[](const int rhs); // subscript operator
+
+	Vector2& operator[](const int rhs); // subscript operator returning with reference
+
 	Matrix2 setRotate(const float a); // set rotate
-	//set rotate 
-	//subscript operator
-	//subscript operater returning reference
-	//float fp v cast operator
-	//float fp m cast operator
+
+	operator float*();
+
 
 	float m[4];
 };

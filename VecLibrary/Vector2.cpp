@@ -94,3 +94,8 @@ Vector2 operator/(const float & lhs, const Vector2& rhs)
 	result.y = lhs / rhs.y;
 	return result;
 }
+
+Vector2::operator float*()
+{
+	return &x;
+}

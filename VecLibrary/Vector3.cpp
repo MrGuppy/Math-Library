@@ -89,6 +89,11 @@ float Vector3::magnitude()
 	return result;
 }
 
+Vector3::operator float*()
+{
+	return &x;
+}
+
 float Vector3::dot(const Vector3 rhs)
 {
 	float result;

@@ -33,7 +33,37 @@ Matrix3::~Matrix3()
 {
 }
 
-Matrix3 Matrix3::setRotate(const float a)
+Matrix3 Matrix3::setRotateX(const float a)
+{
+	m[0] = 1;
+	m[1] = 0;
+	m[2] = 0;
+
+	m[3] = 0;
+	m[4] = cos(a);
+	m[5] = sin(a);
+
+	m[6] = 0;
+	m[7] = -sin(a);
+	m[8] = cos(a);
+}
+
+Matrix3 Matrix3::setRotateY(const float a)
+{
+	m[0] = cos(a);
+	m[1] = 0;
+	m[2] = sin(a);
+
+	m[3] = 0;
+	m[4] = 1;
+	m[5] = 0;
+
+	m[6] = -sin(a);
+	m[7] = 0;
+	m[8] = cos(a);
+}
+
+Matrix3 Matrix3::setRoataeZ(const float a)
 {
 	m[0] = cos(a);
 	m[1] = sin(a);
@@ -45,7 +75,12 @@ Matrix3 Matrix3::setRotate(const float a)
 
 	m[6] = 0;
 	m[7] = 0;
-	m[8] = 0;
+	m[8] = 1;
+}
+
+Matrix3::operator float*()
+{
+	return &m[0];
 }
 
 Matrix3 Matrix3::operator*(const Matrix3 & rhs)
@@ -75,7 +110,7 @@ Vector3 Matrix3::operator*(const Vector3 & rhs)
 	return result;
 }
 
-Vector3 Matrix3::operator[](const int rhs)
+Vector3& Matrix3::operator[](const int rhs)
 {
 	return *(Vector3*)(m + 3 * rhs);
 }
