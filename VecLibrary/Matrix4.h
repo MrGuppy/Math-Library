@@ -16,9 +16,9 @@ public:
 	Vector4 operator[](const int rhs);
 	Matrix4 operator*(const Matrix4& rhs);
 	Vector4 operator*(const Vector4& rhs);
-
+	Matrix4 setRotate(const float a);
 	//set rotate 
-	//subscript operator
+
 	//subscript operater returning reference
 	//float fp v cast operator
 	//float fp m cast operator

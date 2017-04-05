@@ -11,8 +11,7 @@ public:
 	Matrix3 operator*(const Matrix3& rhs);
 	Vector3 operator*(const Vector3& rhs);
 	Vector3 operator[](const int rhs);
-
-	//set rotate 
+	Matrix3 setRotate(const float a);
 	//subscript operator
 	//subscript operater returning reference
 	//float fp v cast operator

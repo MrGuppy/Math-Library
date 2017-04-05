@@ -1,5 +1,5 @@
 #include "Matrix2.h"
-
+#include <math.h>
 
 
 Matrix2::Matrix2(float a, float b, float c, float d)
@@ -23,6 +23,14 @@ Matrix2::~Matrix2()
 {
 }
 
+Matrix2 Matrix2::setRotate(const float a)
+{
+	m[0] = cos(a);
+	m[1] = sin(a);
+	m[2] = -sin(a);
+	m[3] = cos(a);
+}
+
 Matrix2 Matrix2::operator*(const Matrix2& rhs)
 {
 	Matrix2 result;
@@ -43,6 +51,6 @@ Vector2 Matrix2::operator*(const Vector2& rhs)
 
 Vector2 Matrix2::operator[](const int rhs)
 {
-	return *(Vector2*)(m + 2 * rhs)
+	return *(Vector2*)(m + 2 * rhs);
 }
 

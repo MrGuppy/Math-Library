@@ -1,4 +1,5 @@
 #include "Matrix3.h"
+#include <math.h>
 
 Matrix3::Matrix3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 {
@@ -32,6 +33,21 @@ Matrix3::~Matrix3()
 {
 }
 
+Matrix3 Matrix3::setRotate(const float a)
+{
+	m[0] = cos(a);
+	m[1] = sin(a);
+	m[2] = 0;
+
+	m[3] = -sin(a);
+	m[4] = cos(a);
+	m[5] = 0;
+
+	m[6] = 0;
+	m[7] = 0;
+	m[8] = 0;
+}
+
 Matrix3 Matrix3::operator*(const Matrix3 & rhs)
 {
 	Matrix3 result;
@@ -62,5 +78,4 @@ Vector3 Matrix3::operator*(const Vector3 & rhs)
 Vector3 Matrix3::operator[](const int rhs)
 {
 	return *(Vector3*)(m + 3 * rhs);
-
 }
