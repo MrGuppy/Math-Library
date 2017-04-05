@@ -1,7 +1,5 @@
 #include "Matrix3.h"
 
-
-
 Matrix3::Matrix3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 {
 	m[0] = a;
@@ -18,7 +16,6 @@ Matrix3::Matrix3(float a, float b, float c, float d, float e, float f, float g, 
 Matrix3::Matrix3()
 {
 }
-
 
 Matrix3::~Matrix3()
 {
